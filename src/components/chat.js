@@ -32,7 +32,7 @@ class Chat extends Component {
         console.log(friend_name);
         const roomName = 'new';
 
-        const socketPath = 'ws://localhost:8000/ws/chating/'+roomName+'/';
+        const socketPath = '/ws/chating/'+roomName+'/';
 
         const chatSocket = new WebSocket(
             socketPath

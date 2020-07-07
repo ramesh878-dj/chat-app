@@ -9,8 +9,13 @@ const app = express();
 // Serve only the static files form the dist directory
 app.use(express.static('./build'));
 
-app.use('/platform', createProxyMiddleware({
-    target: process.argv.length >= 3 && process.argv[2] ? process.argv[2] : "http://localhost:8085",
+app.use('/api', createProxyMiddleware({
+    target: "https://dochatservice.herokuapp.com",
+    changeOrigin: true,
+}));
+
+app.use('/ws', createProxyMiddleware({
+    target: "ws://dochatservice.herokuapp.com",
     changeOrigin: true,
 }));
 
