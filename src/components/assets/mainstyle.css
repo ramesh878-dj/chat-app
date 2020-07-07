@@ -1,0 +1,50 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 45px;
+    color: #000;
+    background: linear-gradient(45deg, #fff, #fff);
+}
+.topdiv{
+    margin-top: 70px;
+    bottom: 5%;
+}
+.nav{
+    position: fixed;
+    z-index: 9;
+    background: linear-gradient(45deg, #009688, #4CAF50);
+}
+.spanmsg{
+    padding: 10px;
+    border-radius: 10px;
+    color:#fff;
+}
+.chatinputbox{
+    background-color: #fff;
+    border-radius: 50px;
+    border:1px solid #828d92;
+}
+.chatsend{
+    width: 18%;
+    margin-top: -10px;
+    border-radius: 10px;
+}
+.padmar{
+    padding: 0;
+    bottom: 0;
+    position: fixed;
+    background-color: #fff;
+}     
+.searchinput{
+    background-color: #fff;
+    border-radius: 50px;
+    border:1px solid #828d92;
+    padding: 0px 15px;
+}
+.searchiconlg{
+    margin-top: -10px;
+    border-radius: 10px;
+}
+.searchiconmd{
+    margin-top: -10px;
+    border-radius: 10px;
+}
