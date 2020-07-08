@@ -14,10 +14,10 @@ app.use('/api', createProxyMiddleware({
     changeOrigin: true,
 }));
 
-// app.use('/chating', createProxyMiddleware({
-//     target: "wss://dochatservice.herokuapp.com/ws",
-//     changeOrigin: true,
-// }));
+app.use('/ws', createProxyMiddleware({
+    target: "ws://dochatservice.herokuapp.com",
+    changeOrigin: true,
+}));
 
 app.get('/*', function (req, res) {
     res.sendFile(path.join(__dirname, 'build/index.html'));
