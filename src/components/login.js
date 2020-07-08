@@ -11,7 +11,8 @@ class Login extends Component{
 
         this.state = {
             username : '',
-            password : ''
+            password : '',
+            errormsg :'',
         }
 
         this.handleSuccessfullAuth= this.handleSuccessfullAuth.bind(this);
@@ -29,19 +30,28 @@ class Login extends Component{
     submitHandler = e => {
         e.preventDefault()
         console.log(this.state)
-        axios.post('/api/login/', this.state)
-        .then(response=>{
-            console.log(response)
-            if(response.status===200) {
-                localStorage.setItem('loginstatus', 'true');
-                localStorage.setItem('username', response.data.username);
-                localStorage.setItem('token', response.data.token);
-                console.log('set login status after login');
-                this.handleSuccessfullAuth(response.data);
-            }
-        }).catch(error=>{
-            console.log(error)
-        })
+        if(this.state.username!="" && this.state.password!=""){
+            axios.post('/api/login/', this.state)
+            .then(response=>{
+                console.log(response)
+                if(response.status===200) {
+                    localStorage.setItem('loginstatus', 'true');
+                    localStorage.setItem('username', response.data.username);
+                    localStorage.setItem('token', response.data.token);
+                    console.log('set login status after login');
+                    this.handleSuccessfullAuth(response.data);
+                }
+                else{
+                    this.setState({errormsg:"Wrong username or password"});
+                }
+            }).catch(error=>{
+                // console.log(error)
+                this.setState({errormsg:"Wrong username or password"});
+            })
+        }
+        else{
+                this.setState({errormsg:"Please fill username and password"});
+        }
     }
     componentDidMount(){
         let data =localStorage.getItem('loginstatus');
@@ -57,7 +67,7 @@ class Login extends Component{
             }).catch(error=>{
                 console.log(error)
                 localStorage.setItem('loginstatus','false');
-                this.props.history.push("/");
+                // this.props.history.push("/");
             })
         }
     }
@@ -76,7 +86,7 @@ class Login extends Component{
         const fullwidth={
             width:'100%'
         }
-        const { username, password} = this.state
+        const { username, password, errormsg} = this.state
         return (
             <div style={tag1}>
                 <form onSubmit={this.submitHandler}>
@@ -87,6 +97,7 @@ class Login extends Component{
                         <br/>
                         <h4 className="text-shadow">Login Your Account</h4>
                         <p className="text-shadow">Welcome to new Chat website</p>
+                        <p className="text-shadow">{errormsg}</p>
                         <div className="row">
                             <div className="input-field">
                                 <label rel="text_input" style={white}>Username : </label>

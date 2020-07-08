@@ -12,7 +12,7 @@ class About extends Component {
         }
     }
     submitHandler = e => {
-        axios.post('/api/givelike/', this.state)
+        axios.post('/api/givelike/post/', this.state)
         .then(response=>{
             console.log(response)
             this.setState({totlikes:response.data[0].likeCount});
