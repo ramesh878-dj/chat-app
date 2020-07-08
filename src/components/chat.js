@@ -35,7 +35,7 @@ class Chat extends Component {
         // const socketPath = 'ws://dochatservice.herokuapp.com/ws/chating/'+roomName+'/';
 
         const chatSocket = new WebSocket(
-            '/chating/new'
+            'wss://dochatservice.herokuapp.com/ws/chating/new'
         );
 
         chatSocket.onopen = (e) => {
