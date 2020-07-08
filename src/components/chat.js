@@ -6,7 +6,7 @@ import Header from './header'
 import './assets/mainstyle.css'
 import axios from 'axios'
 import Message from './messagecontent'
-// import SocketApp from './socket'
+import ReconnectingWebSocket from 'reconnecting-websocket';
 
 
 class Chat extends Component {
@@ -34,8 +34,9 @@ class Chat extends Component {
 
         // const socketPath = 'ws://dochatservice.herokuapp.com/ws/chating/'+roomName+'/';
 
-        const chatSocket = new WebSocket(
-            '/ws/chating/new/'
+        var ws_scheme = window.location.protocol == "https:" ? "wss" : "ws";
+        const chatSocket = new ReconnectingWebSocket(
+            'wss://dochatservice.herokuapp.com/ws/chating/new/'
         );
 
         chatSocket.onopen = (e) => {
