@@ -52,7 +52,7 @@ class Login extends Component{
                 console.log(response)
                 if(response.data.login === true){
                     localStorage.setItem('loginstatus','true');
-                    this.props.history.push("/chat");
+                    this.props.history.push("/friends");
                 }
             }).catch(error=>{
                 console.log(error)
