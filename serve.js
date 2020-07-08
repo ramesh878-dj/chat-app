@@ -15,7 +15,7 @@ app.use('/api', createProxyMiddleware({
 }));
 
 app.use('/chating', createProxyMiddleware({
-    target: "ws://dochatservice.herokuapp.com/ws",
+    target: "wss://dochatservice.herokuapp.com/ws",
     changeOrigin: true,
 }));
 
