@@ -41,11 +41,12 @@ class Friends extends Component {
         // })
 
         const username =localStorage.getItem('username');
+        const token =localStorage.getItem('token');
         axios({
             method:'get',
             url:'/api/friendslist/'+username+'/get/',
             headers:{
-                'Authorization':'Token dd7dc6546d36009686eb3d4f0229c35e047c0acc'
+                'Authorization':'Token '+token
             }
         })
         .then(response=>{

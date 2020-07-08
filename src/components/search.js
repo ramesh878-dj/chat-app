@@ -48,6 +48,7 @@ class Search extends Component{
 
     addMyFriend(data,datauser){
         let username =localStorage.getItem('username');
+        let token =localStorage.getItem('token');
         axios({
             method:'post',
             url:'/api/addfrd/post/', 
@@ -57,7 +58,7 @@ class Search extends Component{
                 "accepter_name":datauser,
             },
             headers:{
-                'Authorization':'Token dd7dc6546d36009686eb3d4f0229c35e047c0acc'
+                'Authorization':'Token '+token
             }
         })
         .then(response=>{
