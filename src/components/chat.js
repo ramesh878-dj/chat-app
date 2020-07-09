@@ -36,7 +36,7 @@ class Chat extends Component {
 
         var ws_scheme = window.location.protocol == "https:" ? "wss" : "ws";
         const chatSocket = new ReconnectingWebSocket(
-            'ws://dochatservice.herokuapp.com/ws/chating/new/'
+            'wss://dochatservice.herokuapp.com/ws/chating/new/'
         );
 
         chatSocket.onopen = (e) => {
