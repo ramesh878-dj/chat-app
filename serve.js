@@ -10,12 +10,12 @@ const app = express();
 app.use(express.static('./build'));
 
 app.use('/api', createProxyMiddleware({
-    target: "https://dochatservice.herokuapp.com",
+    target: "https://686ecaa07528.ngrok.io",
     changeOrigin: true,
 }));
 
 app.use('/ws', createProxyMiddleware({
-    target: "ws://dochatservice.herokuapp.com",
+    target: "wss://686ecaa07528.ngrok.io",
     changeOrigin: true,
 }));
 
