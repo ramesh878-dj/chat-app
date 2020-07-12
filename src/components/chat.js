@@ -138,7 +138,7 @@ class Chat extends Component {
                         <Message key={message.id} sender_name={message.sender_name} date={message.timestamp} content={message.content} />
                     ):null
                 }
-                <div style={{clear:'both'}} ref={(el)=>(this.messagesEnd=el)}>.</div>
+                <div style={{clear:'both',color:'white'}} ref={(el)=>(this.messagesEnd=el)}>.</div>
                 </div>                
                 <div className="col s12 l12 padmar">
                     <div align="center">
