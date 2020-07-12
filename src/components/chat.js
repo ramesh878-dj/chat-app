@@ -36,7 +36,7 @@ class Chat extends Component {
 
         var ws_scheme = window.location.protocol == "https:" ? "wss" : "ws";
         const chatSocket = new ReconnectingWebSocket(
-            'wss://b9192733f36f.ngrok.io/ws/chating/new/'
+            'wss://1d77b4a084b7.ngrok.io/ws/chating/new/'
         );
 
         chatSocket.onopen = (e) => {
