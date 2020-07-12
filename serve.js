@@ -10,7 +10,7 @@ const app = express();
 app.use(express.static('./build'));
 
 app.use('/api', createProxyMiddleware({
-    target: "https://686ecaa07528.ngrok.io",
+    target: "https://b9192733f36f.ngrok.io",
     changeOrigin: true,
 }));
 
