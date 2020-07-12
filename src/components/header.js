@@ -14,7 +14,7 @@ const Header = () =>{
                             <i className="material-icons hide-on-large-only">menu</i>
                             </span> */}                            <ul className="right">
                             
-                            <li><Link to="/friends">Friend</Link></li>
+                            <li><Link to="/friends">Friends</Link></li>
                             <li><Link to="/requests">Requests</Link></li>
                             <li><Link to="/search">Add Friend</Link></li>
                             <li><Link to="/logout"><i className="material-icons" style={{fontSize:"1.2em"}}>lock</i></Link></li>
