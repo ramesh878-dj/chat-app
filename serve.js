@@ -15,7 +15,7 @@ app.use('/api', createProxyMiddleware({
 }));
 
 app.use('/ws', createProxyMiddleware({
-    target: "wss://b9192733f36f.ngrok.io",
+    target: "wss://1d77b4a084b7.ngrok.io",
     changeOrigin: true,
 }));
 
